@@ -1,6 +1,6 @@
 <?php
 
-namespace GoldbachAlgorithms\AIG;
+namespace GoldbachAlgorithms\AIG\Correios;
 
 use GoldbachAlgorithms\AIG\Address;
 use GoldbachAlgorithms\AIG\Correios\Constants;

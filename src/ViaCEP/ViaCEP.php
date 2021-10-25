@@ -1,6 +1,6 @@
 <?php
 
-namespace GoldbachAlgorithms\AIG;
+namespace GoldbachAlgorithms\AIG\ViaCEP;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
