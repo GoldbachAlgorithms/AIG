@@ -13,9 +13,9 @@ class ViaCEP
 
     public function __construct(ClientInterface $http = null)
     {
-        $this->http = $http ? : new Client;
+        $this->http = $http ?: new Client();
     }
-    
+
     public function findByZipCode($zipCode)
     {
         $url = sprintf(Constants::BASE_URL, $zipCode);
@@ -24,11 +24,11 @@ class ViaCEP
 
         $attributes = json_decode($response->getBody(), true);
 
-        if(
+        if (
             array_key_exists(Constants::ERROR, $attributes) &&
             $attributes[Constants::ERROR] === true
-        ){
-            return new Address;
+        ) {
+            return new Address();
         }
 
         $attributes[Constants::SOURCE] = Constants::SOURCE_NAME;

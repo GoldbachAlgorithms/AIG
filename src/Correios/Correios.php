@@ -10,15 +10,14 @@ class Correios
     public function findByZipCode(string $cep): Address
     {
         $response = $this->request($cep);
-        
-        if (array_key_exists(0, $response[Constants::DATA])) {
 
+        if (array_key_exists(0, $response[Constants::DATA])) {
             $attributes = $this->transform($response);
-            
+
             return new Address($attributes);
         }
 
-        return new Address;
+        return new Address();
     }
 
     public function getPostData(string $cep): string

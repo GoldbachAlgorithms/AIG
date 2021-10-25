@@ -11,33 +11,32 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Goldbach Algorithms
- * 
- * A.I.G. - Address Info Getter 
+ *
+ * A.I.G. - Address Info Getter
  */
 class AIG
 {
-    const ERRORS = 
-        [
-            "CEP_EMPTY" => "É necessário fornecer o valor de 'cep'",
-            "CEP_NOT_FOUND" => "Cep não encontrado!",
-            "CEP_INVALID_API" => "API inválida",
-            "INVALID_SOURCE" => "Fonte de busca inválida. (Tente ViaCep ou Correios)"
-        ];
-    
-    const SOURCE_VIACEP = 'VIACEP';
-    const SOURCE_CORREIOS = 'CORREIOS';
+    public const ERRORS =
+    [
+        "CEP_EMPTY" => "É necessário fornecer o valor de 'cep'",
+        "CEP_NOT_FOUND" => "Cep não encontrado!",
+        "CEP_INVALID_API" => "API inválida",
+        "INVALID_SOURCE" => "Fonte de busca inválida. (Tente ViaCep ou Correios)"
+    ];
 
-    
+    public const SOURCE_VIACEP = 'VIACEP';
+    public const SOURCE_CORREIOS = 'CORREIOS';
+
+
     public function getAddressByCep(
         string $cep,
         string $source = null
-    ): JsonResponse
-    {
-        if(empty($cep)){
+    ): JsonResponse {
+        if (empty($cep)) {
             return new JsonResponse(
                 [
                     'error' => self::ERRORS['CEP_EMPTY']
-                ], 
+                ],
                 Response::HTTP_BAD_REQUEST
             );
         }
@@ -58,7 +57,7 @@ class AIG
                 return new JsonResponse(
                     [
                         'error' => self::ERRORS['INVALID_SOURCE']
-                    ], 
+                    ],
                     Response::HTTP_BAD_REQUEST
                 );
                 break;
@@ -70,26 +69,24 @@ class AIG
         $viaCEP = new ViaCEP();
 
         $return = $viaCEP
-                    ->findByZipCode($cep)
-                    ->toArray();
+            ->findByZipCode($cep)
+            ->toArray();
 
-        if(is_null($return['zipCode'])){
+        if (is_null($return['zipCode'])) {
+            $correios = new Correios();
 
-            $correios = new Correios;
-            
             $return = $correios
-                        ->findByZipCode($cep)
-                        ->toArray();
+                ->findByZipCode($cep)
+                ->toArray();
 
-            if(is_null($return['zipCode'])){                             
+            if (is_null($return['zipCode'])) {
                 return new JsonResponse(
                     [
                         'error' => self::ERRORS['CEP_NOT_FOUND']
-                    ], 
+                    ],
                     Response::HTTP_NOT_FOUND
                 );
             }
-
         }
 
         return new JsonResponse(
@@ -103,14 +100,14 @@ class AIG
         $viaCEP = new ViaCEP();
 
         $return = $viaCEP
-                    ->findByZipCode($cep)
-                    ->toArray();
+            ->findByZipCode($cep)
+            ->toArray();
 
-        if(is_null($return['zipCode'])){                             
+        if (is_null($return['zipCode'])) {
             return new JsonResponse(
                 [
                     'error' => self::ERRORS['CEP_NOT_FOUND']
-                ], 
+                ],
                 Response::HTTP_NOT_FOUND
             );
         }
@@ -123,17 +120,17 @@ class AIG
 
     public function byCorreios($cep)
     {
-        $correios = new Correios;
-                
-        $return = $correios
-                    ->findByZipCode($cep)
-                    ->toArray();
+        $correios = new Correios();
 
-        if(is_null($return['zipCode'])){                             
+        $return = $correios
+            ->findByZipCode($cep)
+            ->toArray();
+
+        if (is_null($return['zipCode'])) {
             return new JsonResponse(
                 [
                     'error' => self::ERRORS['CEP_NOT_FOUND']
-                ], 
+                ],
                 Response::HTTP_NOT_FOUND
             );
         }
@@ -146,9 +143,9 @@ class AIG
 
     public function format($cep)
     {
-        $mask = new Mask;
+        $mask = new Mask();
 
         return $mask
-                 ->transform(Mask::CEP, $cep);
+            ->transform(Mask::CEP, $cep);
     }
 }
