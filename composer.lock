@@ -1,0 +1,56 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "16737d8d0517363ac8401f9e78fd50d5",
+    "packages": [
+        {
+            "name": "goldbach-algorithms/mask",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GoldbachAlgorithms/Mask.git",
+                "reference": "bfe124ac96c3f512572753b5bbc30aab0d60c8e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GoldbachAlgorithms/Mask/zipball/bfe124ac96c3f512572753b5bbc30aab0d60c8e3",
+                "reference": "bfe124ac96c3f512572753b5bbc30aab0d60c8e3",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GoldbachAlgorithms\\Mask\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Goldbach07",
+                    "email": "gustavoalves.a7@gmail.com"
+                }
+            ],
+            "description": "Mascarador de valores PHP",
+            "support": {
+                "issues": "https://github.com/GoldbachAlgorithms/Mask/issues",
+                "source": "https://github.com/GoldbachAlgorithms/Mask/tree/1.0"
+            },
+            "time": "2021-10-25T13:35:48+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
+}

@@ -1,0 +1,29 @@
+{
+    "name": "goldbach-algorithms/aig",
+    "description": "Address Info Getter - Pesquisas de informações de endereços",
+    "type": "library",
+    "require": {
+        "php": ">=5.3.0",
+        "goldbach-algorithms/mask": "^1.0",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "~3.2"
+    },
+    "require-dev": {
+        "php": ">=5.3.0",
+        "goldbach-algorithms/mask": "^1.0",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "~3.2"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "GoldbachAlgorithms\\AIG\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Goldbach07",
+            "email": "gustavoalves.a7@gmail.com"
+        }
+    ]
+}
