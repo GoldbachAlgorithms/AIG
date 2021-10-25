@@ -26,9 +26,8 @@ $aig->getAddressByCep('89566410');
 $aig->getAddressByCep('89304258', AIG::SOURCE_CORREIOS);
 $aig->getAddressByCep('89304258', AIG::SOURCE_VIACEP);
 ```
-## Return
+## Return Json
 ```JSON
-# return JSON
 {
   "zipCode": "89304258",
   "street": "Rua Pioneiro Arlindo Goldbach",
