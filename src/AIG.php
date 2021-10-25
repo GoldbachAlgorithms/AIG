@@ -2,9 +2,9 @@
 
 namespace GoldbachAlgorithms\AIG;
 
-use GoldbachAlgorithms\Mask;
-use GoldbachAlgorithms\AIG\Correios;
-use GoldbachAlgorithms\AIG\ViaCEP;
+use GoldbachAlgorithms\Mask\Mask;
+use GoldbachAlgorithms\AIG\Correios\Correios;
+use GoldbachAlgorithms\AIG\ViaCEP\ViaCEP;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
