@@ -48,4 +48,4 @@ Look at an example of a JSON return displaying the source of the information.
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-Copyright © 2021 [Goldbach Algorithms](https://github.com/GoldbachAlgorithms/Mask/blob/main/LICENSE)
+Copyright © 2021 [Goldbach Algorithms](https://github.com/GoldbachAlgorithms/AIG/blob/main/LICENSE)
