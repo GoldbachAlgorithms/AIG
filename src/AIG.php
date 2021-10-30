@@ -145,7 +145,6 @@ class AIG
     {
         $mask = new Mask();
 
-        return $mask
-            ->transform(Mask::FORMAT["CEP"], $cep);
+        return $mask->cep($cep);
     }
 }
