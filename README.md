@@ -1,4 +1,8 @@
-# AIG
+# AIG - Address Info Getter
+
+[<img src="https://badgen.net/badge/Powered%20by/Goldbach/yellow" />](https://github.com/Goldbach07/)
+[<img src="https://badgen.net/badge/Developed%20for/Symfony/black" />](https://symfony.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Goldbach Algorithms Address Info Getter (fondly nicknamed AIG) is a PHP library developed for Symfony to collect address information.
 
@@ -11,6 +15,7 @@ composer require goldbach-algorithms/aig
 ```
 
 ## Usage
+Create an AIG instance and look for the address indicating or not the source of access.
 
 ```php
 # Add use AIG
@@ -26,7 +31,8 @@ $aig->getAddressByCep('89566410');
 $aig->getAddressByCep('89304258', AIG::SOURCE_CORREIOS);
 $aig->getAddressByCep('89304258', AIG::SOURCE_VIACEP);
 ```
-## Return Json
+## Return
+Look at an example of a JSON return displaying the source of the information.
 ```JSON
 {
   "zipCode": "89304258",
@@ -41,3 +47,5 @@ $aig->getAddressByCep('89304258', AIG::SOURCE_VIACEP);
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+Copyright © 2021 [Goldbach Algorithms](https://github.com/GoldbachAlgorithms/Mask/blob/main/LICENSE)
